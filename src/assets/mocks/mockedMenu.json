@@ -1,0 +1,36 @@
+[
+  {
+    "title": "O firmie",
+    "url": "https://www.wp.pl/",
+    "isSubMenu": false
+  },
+  {
+    "title": "HR",
+    "url": "/",
+    "isSubMenu": false
+  },
+  {
+    "title": "Marketing",
+    "url": "/",
+    "isSubMenu": false
+  },
+  {
+    "title": "Baza wiedzy",
+    "url": "/",
+    "isSubMenu": true,
+    "subMenuElements": [
+      {
+        "title": "HR",
+        "url": "/"
+      },
+      {
+        "title": "Marketing",
+        "url": "/"
+      },
+      {
+        "title": "Sprzedaż",
+        "url": "/"
+      }
+    ]
+  }
+]
