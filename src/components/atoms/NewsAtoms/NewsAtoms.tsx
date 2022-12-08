@@ -41,13 +41,13 @@ export const DataNewsStyling = styled.h5`
   margin-top: 16px;
 `;
 
-export const MainNewsDescription = styled.section`
+export const MainNewsDescription = styled.section<IPropsStyle>`
   position: absolute;
   min-height: 235px;
   background: #31528f;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: ${(props) => props.justifyContent || "space-between"};
   padding: 20px 24px;
   color: white;
   @media (max-width: 785px) {
@@ -60,9 +60,10 @@ export const MainNewsDescription = styled.section`
     bottom: 0;
   }
   @media (min-width: 1280px) {
-    right: 15%;
-    width: 42%;
-    top: calc(50% - 235px / 2);
+    height: ${(props) => props.height};
+    right: ${(props) => props.right || "15%"};
+    width: ${(props) => props.width || "42%"};
+    top: ${(props) => props.topPosition};
   }
 `;
 
@@ -96,7 +97,7 @@ export const MainNewsFooterRef = styled.a`
   cursor: pointer;
 `;
 
-export const MainNewsImgWrapper = styled.div`
+export const MainNewsImgWrapper = styled.div<IPropsStyle>`
   height: 450px;
 
   @media (min-width: 1280px) {
@@ -108,6 +109,7 @@ export const MainNewsImage = styled.div<IPropsStyle>`
   background-image: ${(props) => `url(${props.image})`};
   background-repeat: no-repeat;
   background-position: center;
+  /* width: ${(props) => props.width || ""}; */
   height: 100%;
   @media (min-width: 786px) and (max-width: 1279px) {
     background-size: cover;
@@ -117,9 +119,13 @@ export const MainNewsImage = styled.div<IPropsStyle>`
   }
 `;
 
-export const MainNewsWrapper = styled.div`
+export const MainNewsWrapper = styled.div<IPropsStyle>`
   position: relative;
-  max-height: 450px;
+  height: 450px;
+
+  width: ${(props) => props.width || "inherit"};
+  display: ${(props) => props.display || "inherit"};
+  justify-content: ${(props) => props.justifyContent || "inherit"};
 `;
 
 export const NewsTag = styled.div<IPropsStyle>`
@@ -183,12 +189,6 @@ export const TileImage = styled.div<IPropsStyle>`
     width: 36%;
     height: 220px;
   }
-`;
-
-export const ArticleHeader = styled.h3`
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #31528f;
 `;
 
 export const NewsTileDesriptionWrapper = styled.div`

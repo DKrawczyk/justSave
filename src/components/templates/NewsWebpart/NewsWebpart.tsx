@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { mockedNews } from "../../../assets/mocks/mockedNews";
 
 import { MainNews, NewsList } from "../../organisms";
 import {
@@ -9,12 +8,15 @@ import {
   NewsWrapper,
   ReadLink,
 } from "../../atoms";
+import { useCustomHooks } from "../../../utils/useCommonHooks";
+import { IMockedNews } from "../../../utils/interfaces";
 
-export const NewsWebpart: FC = () => {
-  const sortedNewsByDate = mockedNews.sort((a, b) => {
-    return new Date(a.data) > new Date(b.data) ? -1 : 1;
-  });
+interface INewsWebpartProps {
+  newsList: IMockedNews[]
+}
 
+export const NewsWebpart: FC<INewsWebpartProps> = ({newsList}) => {
+  const sortedNewsByDate = useCustomHooks(newsList)
   const lastImportantNews = sortedNewsByDate.find((el) => el.isImportant);
   return (
     <NewsLayoutWrapper>

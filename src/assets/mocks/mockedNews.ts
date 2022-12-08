@@ -1,13 +1,14 @@
+import { IMockedNews } from "../../utils/interfaces";
 import images from "../images";
 
-export const mockedNews = [
+export const mockedNews:IMockedNews[] = [
   {
     id: 1,
     url: "",
     title: "Uwaga na cyber atak na pocztę elektoniczną! Pamiętaj aby nie otwierać podejrzanych załączników!",
     content:
       "Integer vel molestie odio. Aenean eu placerat urna. Vestibulum blandit nec enim id volutpat. Sed blandit, arcu sit amet pulvinar scelerisque, ex odio mollis ipsum, eget accumsan mi est at dolor.",
-    data: "2019-11-17T08:02:49Z",
+    created: "2019-11-17T08:02:49Z",
     tag: "HR",
     imgUrl: `${images.exampleImage2}`,
     isImportant: true,
@@ -18,7 +19,7 @@ export const mockedNews = [
     title: "Lorem ipsum dolor sit amet",
     content:
       "Integer vel molestie odio. Aenean eu placerat urna. Vestibulum blandit nec enim id volutpat. Sed blandit, arcu sit amet pulvinar scelerisque, ex odio mollis ipsum, eget accumsan mi est at dolor.",
-    data: "2021-11-17T08:02:49Z",
+    created: "2021-11-17T08:02:49Z",
     tag: "Marketing",
     imgUrl: images.exampleImage1,
     isImportant: false,
@@ -29,7 +30,7 @@ export const mockedNews = [
     title: "Lorem ipsum dolor sit amet",
     content:
       "Integer vel molestie odio. Aenean eu placerat urna. Vestibulum blandit nec enim id volutpat. Sed blandit, arcu sit amet pulvinar scelerisque, ex odio mollis ipsum, eget accumsan mi est at dolor.",
-    data: "2021-09-14T08:02:49Z",
+    created: "2021-09-14T08:02:49Z",
     tag: "HR",
     imgUrl: `${images.exampleImage2}`,
     isImportant: false,
@@ -40,7 +41,7 @@ export const mockedNews = [
     title: "Lorem ipsum dolor sit amet",
     content:
       "Integer vel molestie odio. Aenean eu placerat urna. Vestibulum blandit nec enim id volutpat. Sed blandit, arcu sit amet pulvinar scelerisque, ex odio mollis ipsum, eget accumsan mi est at dolor.",
-    data: "2021-10-17T08:02:49Z",
+    created: "2021-10-17T08:02:49Z",
     tag: "Marketing",
     imgUrl: `${images.exampleImage2}`,
     isImportant: false,
@@ -52,7 +53,7 @@ export const mockedNews = [
       "Lorem ipsum dolor sit amet",
     content:
       "Integer vel molestie odio. Aenean eu placerat urna. Vestibulum blandit nec enim id volutpat. Sed blandit, arcu sit amet pulvinar scelerisque, ex odio mollis ipsum, eget accumsan mi est at dolor.",
-    data: "2020-10-17T08:02:49Z",
+    created: "2020-10-17T08:02:49Z",
     tag: "Marketing",
     imgUrl: `${images.exampleImage1}`,
     isImportant: false,

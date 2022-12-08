@@ -1,11 +1,15 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { mockedEmployees } from "./assets/mocks/mockedEmployees";
-import { mockedInterestingEvents } from "./assets/mocks/mockedInterestingEvents";
-import { mockedJobOffers } from "./assets/mocks/mockedJobOffers";
-import { mockedSocialMedias } from "./assets/mocks/mockedSocialMedias";
-import { Menu, NewsWebpart } from "./components/";
 import {
+  mockedEmployees,
+  mockedInterestingEvents,
+  mockedJobOffers,
+  mockedSocialMedias,
+  mockedNews,
+} from "./assets/mocks";
+import { Menu, NewsWebpart, SliderWebpart } from "./components/";
+import {
+  Footer,
   InterestingEventWebpart,
   JobOffers,
   NewEmployees,
@@ -31,20 +35,31 @@ const TemporaryFirstWrapper = styled.div`
 `;
 
 const TemporarySecondWrapper = styled.div`
-  /* padding: 30px 100px; */
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 1279px) {
+  @media (min-width: 1280px) {
     flex-direction: row;
-  } /* min-height: 200px; */
+    padding: 30px 100px;
+  }
+`;
+
+const TemporaryThirdWrapper = styled.div`
+  display: flex;
+  background-color: rgb(241, 241, 241);
+
+  @media (min-width: 1280px) {
+    justify-content: center;
+    padding: 30px 100px;
+
+  }
 `;
 
 export const App: FC = () => {
   return (
     <PageWrapper>
       <Menu />
-      <NewsWebpart />
+      <NewsWebpart newsList={mockedNews} />
       <TemporaryFirstWrapper>
         <NewEmployees employeesList={mockedEmployees} />
         <JobOffers jobList={mockedJobOffers} />
@@ -53,6 +68,12 @@ export const App: FC = () => {
         <InterestingEventWebpart interestingEvents={mockedInterestingEvents} />
         <SocialMediaWebpart socialMedias={mockedSocialMedias} />
       </TemporarySecondWrapper>
+      <TemporaryThirdWrapper>
+        <SliderWebpart newsList={mockedNews} />
+      </TemporaryThirdWrapper>
+      {/* <div> */}
+        <Footer />
+      {/* </div> */}
     </PageWrapper>
   );
 };

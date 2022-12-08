@@ -1,9 +1,14 @@
 import React, { FC } from "react";
-import { ISortedNewsList } from "../../../utils/interfaces";
+import { IMockedNews } from "../../../utils/interfaces";
+// import { INewsProps } from "../../../utils/interfaces";
 import { MainNewsWrapper, NewsTag } from "../../atoms";
 import { MainImage, MainImageDescription } from "../../molecules";
 
-export const MainNews: FC<ISortedNewsList> = ({newsList}) => {
+interface IMainNewsProps {
+  newsList:IMockedNews[]
+}
+
+export const MainNews: FC<IMainNewsProps> = ({newsList}) => {
   const firstNews = newsList[0]
 
   return (

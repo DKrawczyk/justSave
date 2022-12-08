@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { monthVariation } from "../../../utils/dateHandler/variable";
-import { INewsProps } from "../../../utils/interfaces";
+import { IMockedNews } from "../../../utils/interfaces";
 import {
   DataNewsStyling,
   Header,
@@ -11,14 +11,18 @@ import {
   NewsContent,
 } from "../../atoms";
 
-export const MainImageDescription: FC<INewsProps> = ({ news }) => {
+interface IMainImageDescription {
+  news:IMockedNews
+}
+
+export const MainImageDescription: FC<IMainImageDescription> = ({ news }) => {
   const adjustDateFormat = (formatDate: Date) =>
     `${formatDate.getDate()} ${
       monthVariation[formatDate.getMonth()]
     } ${formatDate.getFullYear()}`;
 
   return (
-    <MainNewsDescription>
+    <MainNewsDescription topPosition={'calc(50% - 235px / 2)'}>
       <MainNewsDescriptionWrapper>
         <Header>{news.title}</Header>
         <NewsContent>
@@ -29,7 +33,7 @@ export const MainImageDescription: FC<INewsProps> = ({ news }) => {
       </MainNewsDescriptionWrapper>
       <MainNewsFooter>
         <DataNewsStyling>
-          {adjustDateFormat(new Date(news.data))}
+          {adjustDateFormat(new Date(news.created))}
         </DataNewsStyling>
         <MainNewsFooterRef>Czytaj dalej</MainNewsFooterRef>
       </MainNewsFooter>

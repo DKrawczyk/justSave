@@ -10,6 +10,14 @@ export interface ISubMenuProps {
   borderTop?: null | string;
 }
 
+export interface IHamburgerProps {
+  callback: () => void;
+}
+
+export interface IMenuElementsProps {
+  isMenuOpen: boolean;
+}
+
 export interface IPropsStyle {
   left?: string;
   top?: string;
@@ -17,33 +25,29 @@ export interface IPropsStyle {
   image?: any;
   fontFamily?: string;
   rotate?: string;
+  display?: string;
+  justifyContent?: string;
   width?: string;
+  topPosition?: string
+  height?: string
+  whiteSpace?: string
+  fontSize?: string
+  padding?: string
 }
 
-export interface INewsProps {
-  news: {
-    id: number;
-    url: string;
-    title: string;
-    content: string;
-    data: string;
-    tag: string;
-    imgUrl: any;
-    isImportant: boolean;
-  };
+export interface IMockedNews {
+  id: number;
+  url: string;
+  title: string;
+  content: string;
+  created: string;
+  tag: string;
+  imgUrl: any;
+  isImportant: boolean;
 }
 
-export interface ISortedNewsList {
-  newsList: {
-    id: number;
-    url: string;
-    title: string;
-    content: string;
-    data: string;
-    tag: string;
-    imgUrl: any;
-    isImportant: boolean;
-  }[];
+export interface ISingleNewsProp {
+  news: IMockedNews;
 }
 
 export interface ISocialMediaMock {
@@ -68,12 +72,10 @@ export interface IJobMock {
 }
 
 export interface IInterestingEventMock {
-  interestingEvents: {
-    content: string;
-    imgUrl: any;
-    buttonUrl: string;
-    created: string;
-  }[];
+  content: string;
+  imgUrl: any;
+  buttonUrl: string;
+  created: string;
 }
 
 export interface IEmployeesList {
@@ -87,10 +89,11 @@ export interface IEmployeesList {
   }[];
 }
 
-export interface IHamburgerProps {
-  callback: () => void;
-}
-
-export interface IMenuElementsProps {
-  isMenuOpen: boolean;
+export interface ICustomButtonProps {
+  link: string;
+  text: string;
+  style?: {
+    padding: string;
+    width: string;
+  };
 }

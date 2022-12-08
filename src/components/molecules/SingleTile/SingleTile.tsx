@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { monthVariation } from "../../../utils/dateHandler/variable";
-import { INewsProps } from "../../../utils/interfaces";
+import { ISingleNewsProp } from "../../../utils/interfaces";
 import {
   ArticleHeader,
   DataNewsStyling,
@@ -11,7 +11,8 @@ import {
   TileImage,
 } from "../../atoms";
 
-export const SingleTile: FC<INewsProps> = ({ news }) => {
+
+export const SingleTile: FC<ISingleNewsProp> = ({ news }) => {
   const adjustDateFormat = (formatDate: Date) =>
     `${formatDate.getDate()} ${
       monthVariation[formatDate.getMonth()]
@@ -29,7 +30,7 @@ export const SingleTile: FC<INewsProps> = ({ news }) => {
         </NewsContent>
 
         <DataNewsStyling>
-          {adjustDateFormat(new Date(news.data))}
+          {adjustDateFormat(new Date(news.created))}
         </DataNewsStyling>
       </NewsTileDesriptionWrapper>
     </NewsTileWrapper>
